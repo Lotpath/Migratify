@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{981FF089-DC61-4941-AF4A-4094C455CBFA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Migratify</RootNamespace>
+    <AssemblyName>Migratify</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Commands\ArgumentSource.cs" />
+    <Compile Include="Commands\CommandFactory.cs" />
+    <Compile Include="Commands\CommandRunner.cs" />
+    <Compile Include="Commands\CreateCommand.cs" />
+    <Compile Include="Commands\CurrentVersionCommand.cs" />
+    <Compile Include="Commands\DropCommand.cs" />
+    <Compile Include="Commands\HelpCommand.cs" />
+    <Compile Include="Commands\IArgumentSource.cs" />
+    <Compile Include="Commands\ICommandFactory.cs" />
+    <Compile Include="Commands\ICommandRunner.cs" />
+    <Compile Include="Commands\InitCommand.cs" />
+    <Compile Include="Commands\MigrateCommand.cs" />
+    <Compile Include="Commands\TearDownCommand.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="Container.cs" />
+    <Compile Include="Database\ConnectionFactory.cs" />
+    <Compile Include="Database\DbConnectionExtensions.cs" />
+    <Compile Include="Database\IConnectionFactory.cs" />
+    <Compile Include="Dialects\ISqlDialect.cs" />
+    <Compile Include="Dialects\MsSqlDialect.cs" />
+    <Compile Include="Dialects\MsSqlStatements.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MsSqlStatements.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Dialects\PostgreSqlDialect.cs" />
+    <Compile Include="Dialects\PostgreSqlStatements.Designer.cs">
+      <DependentUpon>PostgreSqlStatements.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Dialects\SqlDialectResolver.cs" />
+    <Compile Include="IContainer.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IMigrationConfiguration.cs" />
+    <Compile Include="MigratifyException.cs" />
+    <Compile Include="MigrationConfiguration.cs" />
+    <Compile Include="Migrations\IMigrationFactory.cs" />
+    <Compile Include="Migrations\Migration.cs" />
+    <Compile Include="Migrations\MigrationFactory.cs" />
+    <Compile Include="Options\CreateOption.cs" />
+    <Compile Include="Options\CurrentVersionOption.cs" />
+    <Compile Include="Options\DropOption.cs" />
+    <Compile Include="Options\HelpOption.cs" />
+    <Compile Include="Commands\ICanHandleOption.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Options\InitOption.cs" />
+    <Compile Include="Options\IOption.cs" />
+    <Compile Include="Options\IOptionFactory.cs" />
+    <Compile Include="Options\IOptionSource.cs" />
+    <Compile Include="Options\OptionFactory.cs" />
+    <Compile Include="Options\OptionSource.cs" />
+    <Compile Include="Options\TearDownOption.cs" />
+    <Compile Include="Options\MigrateOption.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialects\MsSqlStatements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MsSqlStatements.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialects\PostgreSqlStatements.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PostgreSqlStatements.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

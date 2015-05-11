@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migratify", "Migratify\Migratify.csproj", "{981FF089-DC61-4941-AF4A-4094C455CBFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{69D2CE5E-9194-406B-9D4B-8FBDCF5B135F}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\build.cake = ..\build.cake
+		..\build.cmd = ..\build.cmd
+		..\build.ps1 = ..\build.ps1
+		..\LICENSE = ..\LICENSE
+		Migratify\Migratify.nuspec = Migratify\Migratify.nuspec
+		..\nuget\pack.bat = ..\nuget\pack.bat
+		..\nuget\push.bat = ..\nuget\push.bat
+		..\README.md = ..\README.md
+		..\ReleaseNotes.md = ..\ReleaseNotes.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{61F899B0-EC22-406E-A523-F580F77A107D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migratify.Tests", "Migratify.Tests\Migratify.Tests.csproj", "{2AF3086C-3986-4CF7-85BB-8BA090AADACE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{981FF089-DC61-4941-AF4A-4094C455CBFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{981FF089-DC61-4941-AF4A-4094C455CBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{981FF089-DC61-4941-AF4A-4094C455CBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{981FF089-DC61-4941-AF4A-4094C455CBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AF3086C-3986-4CF7-85BB-8BA090AADACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AF3086C-3986-4CF7-85BB-8BA090AADACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AF3086C-3986-4CF7-85BB-8BA090AADACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AF3086C-3986-4CF7-85BB-8BA090AADACE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AF3086C-3986-4CF7-85BB-8BA090AADACE} = {61F899B0-EC22-406E-A523-F580F77A107D}
+	EndGlobalSection
+EndGlobal

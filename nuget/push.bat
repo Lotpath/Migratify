@@ -1,0 +1,1 @@
+..\tools\nuget push Migratify.%1.nupkg %NUGET_API_KEY%
